@@ -1,5 +1,7 @@
 #! /bin/bash
 yum update -y
+echo "Apache" > /etc/hostname
+hostnamectl set-hostname Apache
 yum install -y httpd
 systemctl start httpd
 systemctl enable httpd
