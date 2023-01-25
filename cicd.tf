@@ -48,4 +48,8 @@ resource "aws_instance" "ex_cicd" {
   tags = {
     Name = "ex_cicd"
   }
+
+  lifecycle {
+    create_befcreate_before_destroy = true  
+  }
 }
