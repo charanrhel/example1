@@ -44,6 +44,7 @@ resource "aws_instance" "ex_cicd" {
   vpc_security_group_ids      = [aws_security_group.ex_cicd_sg.id]
   user_data                   = "${file("cicd.sh")}"
   key_name                    = aws_key_pair.example.id
+  iam_instance_profile        = aws_iam_instance_profile.artifact_bucket.name 
 
   tags = {
     Name = "ex_cicd"
