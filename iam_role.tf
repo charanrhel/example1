@@ -9,7 +9,8 @@ resource "aws_iam_policy" "artifact_bucket" {
     Statement = [
       {
         Action = [
-          "s3:*"
+          "s3:*",
+          "ecr:*"
         ]
         Effect   = "Allow"
         Resource = "*"
